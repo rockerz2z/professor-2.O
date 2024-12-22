@@ -1,27 +1,16 @@
 class script(object):
-    START_TXT = """<b>Hello {}, My name is <a href=https://t.me/{}>{}</a>
-✯ Powerful Auto Filtering based on your specific needs.
-✯ File store and access filtered files within the bot.
-✯ Manual Filtering Flexibility.
-✯ Experience an intuitive UI for Quick Results for effortless navigation.
+    START_TXT = START_TXT = """<b>ʜᴇʏ {},
 
-Please Note 🪄:
-✯ This bot is currently exclusive to the @Rockerz2z group, get invite link from that group.
-For inquiries about paid access and setup, contact @Rockerzyy_bot.
+ɪ ᴀᴍ ᴛʜᴇ ᴍᴏꜱᴛ ᴘᴏᴡᴇʀꜰᴜʟ ᴀᴜᴛᴏ ꜰɪʟᴛᴇʀ ʙᴏᴛ ᴡɪᴛʜ ᴘʀᴇᴍɪᴜᴍ ꜰᴇᴀᴛᴜʀᴇꜱ, ᴊᴜsᴛ ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ ᴀɴᴅ ᴇɴᴊᴏʏ
 
-Team: @Rockerz2z</b>"""
+<blockquote>‣ ᴍᴀɪɴᴛᴀɪɴᴇᴅ ʙʏ : <a href='https://telegram.me/Rockerz2z'>Rockerz2z</a></blockquote></b>
+"""
+    CLONE_START_TXT =  """<b>ʜᴇʏ {},
 
-    CLONE_START_TXT = """<b>Hello {}, My name is <a href=https://t.me/{}>{}</a>
-✯ Powerful Auto Filtering based on your specific needs.
-✯ File store and access filtered files within the bot.
-✯ Manual Filtering Flexibility.
-✯ Experience an intuitive UI for Quick Results for effortless navigation.
+ɪ ᴀᴍ ᴛʜᴇ ᴍᴏꜱᴛ ᴘᴏᴡᴇʀꜰᴜʟ ᴀᴜᴛᴏ ꜰɪʟᴛᴇʀ ʙᴏᴛ ᴡɪᴛʜ ᴘʀᴇᴍɪᴜᴍ ꜰᴇᴀᴛᴜʀᴇꜱ, ᴊᴜsᴛ ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ ᴀɴᴅ ᴇɴᴊᴏʏ
 
-Please Note 🪄:
-✯ This bot is currently exclusive to the @Rockerz2z group, get invite link from that group.
-For inquiries about paid access and setup, contact @Rockerzyy_bot.
-
-Team: @Rockerz2z</b>"""
+<blockquote>‣ ᴍᴀɪɴᴛᴀɪɴᴇᴅ ʙʏ : <a href='https://telegram.me/Rockerz2z'>Rockerz2z</a></blockquote></b>
+"""
 
     HELP_TXT = """<b>Hey {}
 Here is the help for my commands.</b>"""
