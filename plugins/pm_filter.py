@@ -1859,7 +1859,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 InlineKeyboardButton('• Mᴏᴠɪᴇ Gʀᴏᴜᴘ •', url=GRP_LNK),
                 InlineKeyboardButton('• Aʙᴏᴜᴛ •', callback_data='about')
             ],[
-                InlineKeyboardButton('• Help •', callback_data='help'),
+                InlineKeyboardButton('• ʜᴇʟᴘ •', callback_data='help'),
                 InlineKeyboardButton('ʀᴏᴄᴋᴇʀᴢ𝟤ᴢ 😎', url=CHNL_LNK)
             ],[
                 InlineKeyboardButton('✨ ʙᴜʏ ꜱᴜʙꜱᴄʀɪᴘᴛɪᴏɴ : ʀᴇᴍᴏᴠᴇ ᴀᴅꜱ ✨', callback_data='subscription')
@@ -1871,7 +1871,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 InlineKeyboardButton('• Mᴏᴠɪᴇ Gʀᴏᴜᴘ •', url=GRP_LNK),
                 InlineKeyboardButton('• Aʙᴏᴜᴛ •', callback_data='about')
             ],[
-                InlineKeyboardButton('❗Help', callback_data='help'),
+                InlineKeyboardButton('• ʜᴇʟᴘ •', callback_data='help'),
                 InlineKeyboardButton('ʀᴏᴄᴋᴇʀᴢ𝟤ᴢ 😎', url=CHNL_LNK)
             ]]
         if CLONE_MODE == True:
