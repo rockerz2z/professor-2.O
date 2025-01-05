@@ -58,6 +58,8 @@ async def start(client, message):
                 InlineKeyboardButton('ʀᴏᴄᴋᴇʀᴢ𝟤ᴢ 😎', url=CHNL_LNK)
             ],[
                 InlineKeyboardButton('✨ ʙᴜʏ ꜱᴜʙꜱᴄʀɪᴘᴛɪᴏɴ : ʀᴇᴍᴏᴠᴇ ᴀᴅꜱ ✨', callback_data='subscription')
+            ],[
+                InlineKeyboardButton('✨ 🇷‌🇪‌🇫‌🇪‌🇷‌ 🇫‌🇷‌🇮‌🇪‌🇳‌🇩‌🇸‌ : 🇫‌🇷‌🇪‌🇪‌ 🇸‌🇺‌🇧‌🇸‌🇨‌🇷‌🇮‌🇵‌🇹‌🇮‌🇴‌🇳‌ ✨', callback_data='subscription')
             ]]
         else:
             buttons = [[
@@ -142,6 +144,8 @@ async def start(client, message):
                 InlineKeyboardButton('ʀᴏᴄᴋᴇʀᴢ𝟤ᴢ 😎', url=CHNL_LNK)
             ],[
                 InlineKeyboardButton('✨ ʙᴜʏ ꜱᴜʙꜱᴄʀɪᴘᴛɪᴏɴ : ʀᴇᴍᴏᴠᴇ ᴀᴅꜱ ✨', callback_data='subscription')
+            ],[
+                InlineKeyboardButton('✨ 🇷‌🇪‌🇫‌🇪‌🇷‌ 🇫‌🇷‌🇮‌🇪‌🇳‌🇩‌🇸‌ : 🇫‌🇷‌🇪‌🇪‌ 🇸‌🇺‌🇧‌🇸‌🇨‌🇷‌🇮‌🇵‌🇹‌🇮‌🇴‌🇳‌ ✨', callback_data='subscription')
             ]]
         else:
             buttons = [[
@@ -193,6 +197,8 @@ async def start(client, message):
                    InlineKeyboardButton('ʀᴏᴄᴋᴇʀᴢ𝟤ᴢ 😎', url=CHNL_LNK)
                 ],[
                    InlineKeyboardButton('✨ ʙᴜʏ ꜱᴜʙꜱᴄʀɪᴘᴛɪᴏɴ : ʀᴇᴍᴏᴠᴇ ᴀᴅꜱ ✨', callback_data='subscription')
+                ],[
+                InlineKeyboardButton('✨ 🇷‌🇪‌🇫‌🇪‌🇷‌ 🇫‌🇷‌🇮‌🇪‌🇳‌🇩‌🇸‌ : 🇫‌🇷‌🇪‌🇪‌ 🇸‌🇺‌🇧‌🇸‌🇨‌🇷‌🇮‌🇵‌🇹‌🇮‌🇴‌🇳‌ ✨', callback_data='subscription')
                 ]]
             else:
                 buttons = [[
@@ -1463,6 +1469,7 @@ async def check_plans_cmd(client, message):
         btn = [ 
             [InlineKeyboardButton("ɢᴇᴛ ғʀᴇᴇ ᴛʀᴀɪʟ ғᴏʀ 𝟻 ᴍɪɴᴜᴛᴇꜱ ☺️", callback_data="get_trail")],
             [InlineKeyboardButton("ʙᴜʏ sᴜʙsᴄʀɪᴘᴛɪᴏɴ : ʀᴇᴍᴏᴠᴇ ᴀᴅs", callback_data="buy_premium")],
+            [InlineKeyboardButton("🇷‌🇪‌🇫‌🇪‌🇷‌ 🇫‌🇷‌🇮‌🇪‌🇳‌🇩‌🇸‌ : 🇫‌🇷‌🇪‌🇪‌ 🇸‌🇺‌🇧‌🇸‌🇨‌🇷‌🇮‌🇵‌🇹‌🇮‌🇴‌🇳‌", callback_data="buy_premium")],
             [InlineKeyboardButton("⚠️ ᴄʟᴏsᴇ / ᴅᴇʟᴇᴛᴇ ⚠️", callback_data="close_data")]
         ]
         reply_markup = InlineKeyboardMarkup(btn)
