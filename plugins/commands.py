@@ -59,7 +59,7 @@ async def start(client, message):
             ],[
                 InlineKeyboardButton('✨ ʙᴜʏ ꜱᴜʙꜱᴄʀɪᴘᴛɪᴏɴ : ʀᴇᴍᴏᴠᴇ ᴀᴅꜱ ✨', callback_data='subscription')
             ],[
-                InlineKeyboardButton('☺️ R‌efer Friends : Free Subscription ☺️', callback_data='subscription')
+                InlineKeyboardButton('☺️ ʀᴇꜰᴇʀ ꜰʀɪᴇɴᴅꜱ : ꜰʀᴇᴇ ꜱᴜʙꜱᴄʀɪᴘᴛɪᴏɴ ☺️', callback_data='subscription')
             ]]
         else:
             buttons = [[
@@ -145,7 +145,7 @@ async def start(client, message):
             ],[
                 InlineKeyboardButton('✨ ʙᴜʏ ꜱᴜʙꜱᴄʀɪᴘᴛɪᴏɴ : ʀᴇᴍᴏᴠᴇ ᴀᴅꜱ ✨', callback_data='subscription')
             ],[
-                InlineKeyboardButton('☺️ R‌efer Friends : Free Subscription ☺️', callback_data='subscription')
+                InlineKeyboardButton('☺️ ʀᴇꜰᴇʀ ꜰʀɪᴇɴᴅꜱ : ꜰʀᴇᴇ ꜱᴜʙꜱᴄʀɪᴘᴛɪᴏɴ ☺️', callback_data='subscription')
             ]]
         else:
             buttons = [[
@@ -198,7 +198,7 @@ async def start(client, message):
                 ],[
                    InlineKeyboardButton('✨ ʙᴜʏ ꜱᴜʙꜱᴄʀɪᴘᴛɪᴏɴ : ʀᴇᴍᴏᴠᴇ ᴀᴅꜱ ✨', callback_data='subscription')
                 ],[
-                   InlineKeyboardButton('☺️ R‌efer Friends : Free Subscription ☺️', callback_data='subscription')
+                   InlineKeyboardButton('☺️ ʀᴇꜰᴇʀ ꜰʀɪᴇɴᴅꜱ : ꜰʀᴇᴇ ꜱᴜʙꜱᴄʀɪᴘᴛɪᴏɴ ☺️', callback_data='subscription')
                 ]]
             else:
                 buttons = [[
@@ -1469,7 +1469,7 @@ async def check_plans_cmd(client, message):
         btn = [ 
             [InlineKeyboardButton("ɢᴇᴛ ғʀᴇᴇ ᴛʀᴀɪʟ ғᴏʀ 𝟻 ᴍɪɴᴜᴛᴇꜱ ☺️", callback_data="get_trail")],
             [InlineKeyboardButton("ʙᴜʏ sᴜʙsᴄʀɪᴘᴛɪᴏɴ : ʀᴇᴍᴏᴠᴇ ᴀᴅs", callback_data="buy_premium")],
-            [InlineKeyboardButton("R‌efer Friends : Free Subscription‌‌ ☺️", callback_data="buy_premium")],
+            [InlineKeyboardButton("ʀᴇꜰᴇʀ ꜰʀɪᴇɴᴅꜱ : ꜰʀᴇᴇ ꜱᴜʙꜱᴄʀɪᴘᴛɪᴏɴ‌‌ ☺️", callback_data="subscription")],
             [InlineKeyboardButton("⚠️ ᴄʟᴏsᴇ / ᴅᴇʟᴇᴛᴇ ⚠️", callback_data="close_data")]
         ]
         reply_markup = InlineKeyboardMarkup(btn)
