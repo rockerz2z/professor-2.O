@@ -1864,7 +1864,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             ],[
                 InlineKeyboardButton('✨ ʙᴜʏ ꜱᴜʙꜱᴄʀɪᴘᴛɪᴏɴ : ʀᴇᴍᴏᴠᴇ ᴀᴅꜱ ✨', callback_data='subscription')
             ],[
-                InlineKeyboardButton('☺️ R‌efer Friends : Free Subscription ☺️', callback_data='subscription')
+                InlineKeyboardButton('☺️ ʀᴇꜰᴇʀ ꜰʀɪᴇɴᴅꜱ : ꜰʀᴇᴇ ꜱᴜʙꜱᴄʀɪᴘᴛɪᴏɴ ☺️', callback_data='subscription')
             ]]
         else:
             buttons = [[
