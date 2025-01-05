@@ -31,7 +31,7 @@ async def start(client, message):
                 InlineKeyboardButton('⤬ Aᴅᴅ Mᴇ Tᴏ Yᴏᴜʀ Gʀᴏᴜᴘ ⤬', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
             ],[
                 InlineKeyboardButton('• Mᴏᴠɪᴇ Gʀᴏᴜᴘ •', url=GRP_LNK),
-                InlineKeyboardButton('• Aʙᴏᴜᴛ •', callback_data='about')
+                InlineKeyboardButton('• Aʙᴏᴜᴛ •', call_data='about')
             ],[
                 InlineKeyboardButton('ʀᴏᴄᴋᴇʀᴢ𝟤ᴢ 😎', url=CHNL_LNK)
             ]]
@@ -52,7 +52,7 @@ async def start(client, message):
                 InlineKeyboardButton('⤬ Aᴅᴅ Mᴇ Tᴏ Yᴏᴜʀ Gʀᴏᴜᴘ ⤬', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
             ],[
                 InlineKeyboardButton('• Mᴏᴠɪᴇ Gʀᴏᴜᴘ •', url=GRP_LNK),
-                InlineKeyboardButton('• Aʙᴏᴜᴛ •', callback_data='about')
+                InlineKeyboardButton('• Aʙᴏᴜᴛ •', call_data='about')
             ],[
                 InlineKeyboardButton('• ʜᴇʟᴘ •', callback_data='help'),
                 InlineKeyboardButton('ʀᴏᴄᴋᴇʀᴢ𝟤ᴢ 😎', url=CHNL_LNK)
@@ -1447,6 +1447,7 @@ async def plans_cmd_handler(client, message):
         return 
     btn = [            
         [InlineKeyboardButton("ꜱᴇɴᴅ ᴘᴀʏᴍᴇɴᴛ ʀᴇᴄᴇɪᴘᴛ 🧾", url=OWNER_LNK)],
+        [InlineKeyboardButton("Bᴀᴄᴋ ᴛᴏ ᴍᴀɪɴ ᴍᴇɴᴜ", call_data="start")],
         [InlineKeyboardButton("⚠️ ᴄʟᴏsᴇ / ᴅᴇʟᴇᴛᴇ ⚠️", callback_data="close_data")]
     ]
     reply_markup = InlineKeyboardMarkup(btn)
@@ -1468,9 +1469,10 @@ async def check_plans_cmd(client, message):
     else:
         btn = [ 
             [InlineKeyboardButton("ɢᴇᴛ ғʀᴇᴇ ᴛʀᴀɪʟ ғᴏʀ 𝟻 ᴍɪɴᴜᴛᴇꜱ ☺️", callback_data="get_trail")],
-            [InlineKeyboardButton("ʙᴜʏ sᴜʙsᴄʀɪᴘᴛɪᴏɴ : ʀᴇᴍᴏᴠᴇ ᴀᴅs", callback_data="buy_premium")],
-            [InlineKeyboardButton("ʀᴇꜰᴇʀ ꜰʀɪᴇɴᴅꜱ : ꜰʀᴇᴇ ꜱᴜʙꜱᴄʀɪᴘᴛɪᴏɴ‌‌ ☺️", callback_data="subscription")],
-            [InlineKeyboardButton("⚠️ ᴄʟᴏsᴇ / ᴅᴇʟᴇᴛᴇ ⚠️", callback_data="close_data")]
+            [InlineKeyboardButton("ʙᴜʏ sᴜʙsᴄʀɪᴘᴛɪᴏɴ : ʀᴇᴍᴏᴠᴇ ᴀᴅs", call_data="buy_premium")],
+            [InlineKeyboardButton("ʀᴇꜰᴇʀ ꜰʀɪᴇɴᴅꜱ : ꜰʀᴇᴇ ꜱᴜʙꜱᴄʀɪᴘᴛɪᴏɴ‌‌ ☺️", call_data="subscription")],
+            [InlineKeyboardButton("Bᴀᴄᴋ ᴛᴏ ᴍᴀɪɴ ᴍᴇɴᴜ", call_data="start")],
+            [InlineKeyboardButton("⚠️ ᴄʟᴏsᴇ / ᴅᴇʟᴇᴛᴇ ⚠️", call_data="close_data")]
         ]
         reply_markup = InlineKeyboardMarkup(btn)
         m=await message.reply_sticker("CAACAgIAAxkBAAIBTGVjQbHuhOiboQsDm35brLGyLQ28AAJ-GgACglXYSXgCrotQHjibHgQ")         
