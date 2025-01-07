@@ -1115,21 +1115,28 @@ async def cb_handler(client: Client, query: CallbackQuery):
             await query.message.edit_text(text=new_text)
             return
             
-elif query.data == "buy_premium":
-    btn = [
-        [InlineKeyboardButton("✅sᴇɴᴅ ʏᴏᴜʀ ᴘᴀʏᴍᴇɴᴛ ʀᴇᴄᴇɪᴘᴛ ʜᴇʀᴇ✅", url=f"https://t.me/{OWNER_LNK}")],
-        [InlineKeyboardButton("↙ Bᴀᴄᴋ ᴛᴏ ᴍᴀɪɴ ᴍᴇɴᴜ ↙", callback_data="start")]
-    ]
-    
-    # Loop to append buttons for each admin in ADMINS
-    for admin in ADMINS:
-        btn.append([InlineKeyboardButton(f"Admin {admin}", callback_data=f"admin_{admin}")])
-    
-    # Append the close button
-    btn.append(
-        [InlineKeyboardButton("⚠️ᴄʟᴏsᴇ / ᴅᴇʟᴇᴛᴇ⚠️", callback_data="close_data")]
-    )
-    
+    elif query.data == "buy_premium":
+        btn = [
+            [InlineKeyboardButton("✅sᴇɴᴅ ʏᴏᴜʀ ᴘᴀʏᴍᴇɴᴛ ʀᴇᴄᴇɪᴘᴛ ʜᴇʀᴇ✅", url=f"https://t.me/{OWNER_LNK}")],
+            [InlineKeyboardButton("↙ Bᴀᴄᴋ ᴛᴏ ᴍᴀɪɴ ᴍᴇɴᴜ ↙", callback_data="start")]
+        ]
+        
+        # Loop to append admin buttons if needed
+        for admin in ADMINS:
+            btn.append([InlineKeyboardButton(f"Admin {admin}", callback_data=f"admin_{admin}")])
+        
+        # Append the close button
+        btn.append([InlineKeyboardButton("⚠️ᴄʟᴏsᴇ / ᴅᴇʟᴇᴛᴇ⚠️", callback_data="close_data")])
+
+        # Create the reply markup
+        reply_markup = InlineKeyboardMarkup(btn)
+
+        # Send the reply message with a photo and the inline keyboard
+        await query.message.reply_photo(
+            photo=PAYMENT_QR,
+            caption=PAYMENT_TEXT,
+            reply_markup=reply_markup
+        )
     # Prepare the reply markup
     reply_markup = InlineKeyboardMarkup(btn)
 
