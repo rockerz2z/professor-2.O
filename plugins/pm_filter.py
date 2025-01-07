@@ -1101,6 +1101,7 @@ async def filter_qualities_cb_handler(client: Client, query: CallbackQuery):
 async def cb_handler(client: Client, query: CallbackQuery):
     if query.data == "close_data":
         await query.message.delete()
+
     elif query.data == "get_trail":
         user_id = query.from_user.id
         free_trial_status = await db.get_free_trial_status(user_id)
@@ -1110,21 +1111,31 @@ async def cb_handler(client: Client, query: CallbackQuery):
             await query.message.edit_text(text=new_text)
             return
         else:
-            new_text= "**🤣 you already used free now no more free trail. please buy subscription here are our 👉 /plans**"
+            new_text = "**🤣 you already used free now no more free trail. please buy subscription here are our 👉 /plans**"
             await query.message.edit_text(text=new_text)
             return
-            
+
     elif query.data == "buy_premium":
-    btn = [
-        [InlineKeyboardButton("✅sᴇɴᴅ ʏᴏᴜʀ ᴘᴀʏᴍᴇɴᴛ ʀᴇᴄᴇɪᴘᴛ ʜᴇʀᴇ✅", url=f"https://t.me/{OWNER_LNK}")],
-        [InlineKeyboardButton("↙ Bᴀᴄᴋ ᴛᴏ ᴍᴀɪɴ ᴍᴇɴᴜ ↙", callback_data="start")]
-    ]
-            for admin in ADMINS
+        btn = [
+            [InlineKeyboardButton("✅sᴇɴᴅ ʏᴏᴜʀ ᴘᴀʏᴍᴇɴᴛ ʀᴇᴄᴇɪᴘᴛ ʜᴇʀᴇ✅", url=f"https://t.me/{OWNER_LNK}")],
+            [InlineKeyboardButton("↙ Bᴀᴄᴋ ᴛᴏ ᴍᴀɪɴ ᴍᴇɴᴜ ↙", callback_data="start")]
         ]
+        
+        # Add admin buttons dynamically if ADMINS is defined
+        if ADMINS:
+            btn.extend(
+                [[InlineKeyboardButton(f"Admin {admin}", callback_data=f"admin_{admin}")]] for admin in ADMINS
+            )
+        
+        # Add a close button
         btn.append(
             [InlineKeyboardButton("⚠️ᴄʟᴏsᴇ / ᴅᴇʟᴇᴛᴇ⚠️", callback_data="close_data")]
         )
+        
+        # Prepare reply markup
         reply_markup = InlineKeyboardMarkup(btn)
+
+        # Send the payment details
         await query.message.reply_photo(
             photo=PAYMENT_QR,
             caption=PAYMENT_TEXT,
