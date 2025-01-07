@@ -1863,6 +1863,8 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 InlineKeyboardButton('ʀᴏᴄᴋᴇʀᴢ𝟤ᴢ 😎', url=CHNL_LNK)
             ],[
                 InlineKeyboardButton('✨ ʙᴜʏ ꜱᴜʙꜱᴄʀɪᴘᴛɪᴏɴ : ʀᴇᴍᴏᴠᴇ ᴀᴅꜱ ✨', callback_data='subscription')
+            ],[
+                InlineKeyboardButton('☺️ ʀᴇꜰᴇʀ ꜰʀɪᴇɴᴅꜱ : ꜰʀᴇᴇ ꜱᴜʙꜱᴄʀɪᴘᴛɪᴏɴ ☺️', callback_data='subscription')
             ]]
         else:
             buttons = [[
