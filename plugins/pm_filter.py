@@ -1123,9 +1123,8 @@ async def cb_handler(client: Client, query: CallbackQuery):
         
         # Add admin buttons dynamically if ADMINS is defined
         if ADMINS:
-            btn.extend(
-                [[InlineKeyboardButton(f"Admin {admin}", callback_data=f"admin_{admin}")]] for admin in ADMINS
-            )
+            for admin in ADMINS:
+                btn.append([InlineKeyboardButton(f"Admin {admin}", callback_data=f"admin_{admin}")])
         
         # Add a close button
         btn.append(
