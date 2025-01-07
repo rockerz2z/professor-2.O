@@ -1096,6 +1096,7 @@ async def filter_qualities_cb_handler(client: Client, query: CallbackQuery):
             await query.edit_message_reply_markup(reply_markup=InlineKeyboardMarkup(btn))
         except MessageNotModified:
             pass
+                
 @Client.on_callback_query()
 async def cb_handler(client: Client, query: CallbackQuery):
     if query.data == "close_data":
@@ -1103,47 +1104,31 @@ async def cb_handler(client: Client, query: CallbackQuery):
     elif query.data == "get_trail":
         user_id = query.from_user.id
         free_trial_status = await db.get_free_trial_status(user_id)
-        if not free_trial_status:
+        if not free_trial_status:            
             await db.give_free_trail(user_id)
             new_text = "**You can use free trial for 5 minutes from now 😀\n\nஇப்போதிலிருந்து 5 நிமிடங்களுக்கு இலவச சோதனையைப் பயன்படுத்தலாம். 😀**"        
             await query.message.edit_text(text=new_text)
             return
         else:
-            new_text = "**🤣 you already used free now no more free trial. please buy subscription here are our 👉 /plans**"
+            new_text= "**🤣 you already used free now no more free trail. please buy subscription here are our 👉 /plans**"
             await query.message.edit_text(text=new_text)
             return
+            
     elif query.data == "buy_premium":
-        btn = [
-            [InlineKeyboardButton("✅sᴇɴᴅ ʏᴏᴜʀ ᴘᴀʏᴍᴇɴᴛ ʀᴇᴄᴇɪᴘᴛ ʜᴇʀᴇ✅", url=f"https://t.me/{OWNER_LNK}")],
-            [InlineKeyboardButton("↙ Bᴀᴄᴋ ᴛᴏ ᴍᴀɪɴ ᴍᴇɴᴜ ↙", callback_data="start")]
+        btn = [[            
+            InlineKeyboardButton("✅sᴇɴᴅ ʏᴏᴜʀ ᴘᴀʏᴍᴇɴᴛ ʀᴇᴄᴇɪᴘᴛ ʜᴇʀᴇ✅", user_id=OWNER_LNK)
         ]
-        
-        # Loop to append admin buttons if needed
-        for admin in ADMINS:
-            btn.append([InlineKeyboardButton(f"Admin {admin}", callback_data=f"admin_{admin}")])
-        
-        # Append the close button
-        btn.append([InlineKeyboardButton("⚠️ᴄʟᴏsᴇ / ᴅᴇʟᴇᴛᴇ⚠️", callback_data="close_data")])
-
-        # Create the reply markup
+            for admin in ADMINS
+        ]
+        btn.append(
+            [InlineKeyboardButton("⚠️ᴄʟᴏsᴇ / ᴅᴇʟᴇᴛᴇ⚠️", callback_data="close_data")]
+        )
         reply_markup = InlineKeyboardMarkup(btn)
-
-        # Send the reply message with a photo and the inline keyboard
         await query.message.reply_photo(
             photo=PAYMENT_QR,
             caption=PAYMENT_TEXT,
             reply_markup=reply_markup
         )
-        return  # Make sure this is aligned correctly, without extra indentation
-    # Prepare the reply markup
-    reply_markup = InlineKeyboardMarkup(btn)
-
-    # Send the reply message with the photo and markup
-    await query.message.reply_photo(
-        photo=PAYMENT_QR,
-        caption=PAYMENT_TEXT,
-        reply_markup=reply_markup
-    )
         return 
     elif query.data == "gfiltersdeleteallconfirm":
         await del_allg(query.message, 'gfilters')
@@ -1877,9 +1862,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 InlineKeyboardButton('• ʜᴇʟᴘ •', callback_data='help'),
                 InlineKeyboardButton('ʀᴏᴄᴋᴇʀᴢ𝟤ᴢ 😎', url=CHNL_LNK)
             ],[
-                InlineKeyboardButton('✨ ʙᴜʏ ꜱᴜʙꜱᴄʀɪᴘᴛɪᴏɴ : ʀᴇᴍᴏᴠᴇ ᴀᴅꜱ ✨', callback_data='buy_premium')
-            ],[
-                InlineKeyboardButton('☺️ ʀᴇꜰᴇʀ ꜰʀɪᴇɴᴅꜱ : ꜰʀᴇᴇ ꜱᴜʙꜱᴄʀɪᴘᴛɪᴏɴ ☺️', callback_data='subscription')
+                InlineKeyboardButton('✨ ʙᴜʏ ꜱᴜʙꜱᴄʀɪᴘᴛɪᴏɴ : ʀᴇᴍᴏᴠᴇ ᴀᴅꜱ ✨', callback_data='subscription')
             ]]
         else:
             buttons = [[
