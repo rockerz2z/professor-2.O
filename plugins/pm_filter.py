@@ -1120,7 +1120,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton("✅sᴇɴᴅ ʏᴏᴜʀ ᴘᴀʏᴍᴇɴᴛ ʀᴇᴄᴇɪᴘᴛ ʜᴇʀᴇ✅", url=f"https://t.me/{OWNER_LNK}"),
             InlineKeyboardButton("↙ Bᴀᴄᴋ ᴛᴏ ᴍᴀɪɴ ᴍᴇɴᴜ ↙", callback_data="start")
         ]
-          ]
+    ]
             for admin in ADMINS
         ]
         btn.append(
