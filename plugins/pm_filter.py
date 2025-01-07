@@ -1096,7 +1096,6 @@ async def filter_qualities_cb_handler(client: Client, query: CallbackQuery):
             await query.edit_message_reply_markup(reply_markup=InlineKeyboardMarkup(btn))
         except MessageNotModified:
             pass
-                
 @Client.on_callback_query()
 async def cb_handler(client: Client, query: CallbackQuery):
     if query.data == "close_data":
@@ -1135,6 +1134,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             caption=PAYMENT_TEXT,
             reply_markup=reply_markup
         )
+        return  # Make sure this is aligned correctly, without extra indentation
     # Prepare the reply markup
     reply_markup = InlineKeyboardMarkup(btn)
 
