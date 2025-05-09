@@ -11,9 +11,9 @@ id_pattern = re.compile(r'^.\d+$')
 
 # Bot information
 SESSION = environ.get('SESSION', 'TechVJBot')
-API_ID = int(environ.get('API_ID', '2393757'))
-API_HASH = environ.get('API_HASH', '89f1050bae8e86a68c3e2278bcfbfc9b')
-BOT_TOKEN = environ.get('BOT_TOKEN', "7635814500:AAGlcOZQYWcATx-1zoZ5FZYk1jEumAUH05o")
+API_ID = int(environ.get('API_ID', '21388641'))
+API_HASH = environ.get('API_HASH', '16f909bd213b2222a620d7641036834e')
+BOT_TOKEN = environ.get('BOT_TOKEN', "7597832356:AAEIt1DkR993uZcVbDpXbrZCiXL2cvfjb7o")
 
 
 # This Pictures Is For Start Message Picture, You Can Add Multiple By Giving One Space Between Each.
@@ -26,7 +26,7 @@ auth_users = [int(user) if id_pattern.search(user) else user for user in environ
 AUTH_USERS = (auth_users + ADMINS) if auth_users else []
 
 # This Channel Is For When User Start Your Bot Then Bot Send That User Name And Id In This Log Channel, Same For Group Also.
-LOG_CHANNEL = int(environ.get('LOG_CHANNEL', '-1002264708428'))
+LOG_CHANNEL = int(environ.get('LOG_CHANNEL', '-1002280301241'))
 
 # This Is File Channel Where You Upload Your File Then Bot Automatically Save It In Database 
 CHANNELS = [int(ch) if id_pattern.search(ch) else ch for ch in environ.get('CHANNELS', '-1001660466640 -1001505006734').split()]  # For Multiple Id Use One Space Between Each.
