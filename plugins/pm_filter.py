@@ -18,6 +18,8 @@ from database.connections_mdb import mydb, active_connection, all_connections, d
 from database.gfilters_mdb import find_gfilter, get_gfilters, del_allg
 from urllib.parse import quote_plus
 from TechVJ.util.file_properties import get_name, get_hash, get_media_file_size
+from pyrogram.errors import QueryIdInvalid
+
 
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.ERROR)
@@ -230,7 +232,10 @@ async def next_page(bot, query):
             )
         except MessageNotModified:
             pass
+    try:
     await query.answer()
+except QueryIdInvalid:
+    print("QueryIdInvalid: Callback query may have expired or already been answered.")
 
 @Client.on_callback_query(filters.regex(r"^spol"))
 async def advantage_spoll_choker(bot, query):
@@ -873,12 +878,13 @@ async def filter_seasons_cb_handler(client: Client, query: CallbackQuery):
     files2, _, _ = await get_search_results(chat_id, search2, max_results=10)
     files2 = [file for file in files2 if re.search(seas2, file["file_name"], re.IGNORECASE)]
 
-    if files2:
-        files.extend(files2)
-        
     if not files:
-        await query.answer("🚫 𝗡𝗼 𝗙𝗶𝗹𝗲 𝗪𝗲𝗿𝗲 𝗙𝗼𝘂𝗻𝗱 🚫", show_alert=1)
-        return
+    try:
+        await query.answer("🚫 𝗡𝗼 𝗙𝗶𝗹𝗲 𝗪𝗲𝗿𝗲 𝗙𝗼𝘂𝗻𝗱 🚫", show_alert=True)
+    except QueryIdInvalid:
+        print("QueryIdInvalid: Callback query may have expired or already been answered.")
+    return
+
     temp.GETALL[key] = files
     settings = await get_settings(message.chat.id)
     pre = 'filep' if settings['file_secure'] else 'file'
